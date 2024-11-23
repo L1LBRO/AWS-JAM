@@ -13,15 +13,24 @@ El objetivo de este repositorio es:
 📢 Importante:
 
 Aunque este repositorio es público, está diseñado para el uso interno de los alumnos participantes. Si no formas parte del equipo, puedes explorar el contenido bajo tu responsabilidad, pero no garantizamos soporte ni explicaciones fuera del contexto del evento.
+
 📁 Estructura del repositorio
 
 El repositorio está organizado en las siguientes carpetas:
 
 AWS-JAM/
-├── herramientas/         # Scripts y herramientas creadas o adaptadas
-├── recursos/             # Documentación externa, enlaces y referencias útiles
-├── documentacion/        # Notas y guías elaboradas por el equipo
-└── README.md             # Introducción y propósito del repositorio
+
+├── herramientas/         
+     Scripts y herramientas creadas o adaptadas
+
+├── recursos/             
+     Documentación externa, enlaces y referencias útiles
+
+├── documentacion/        
+     Notas y guías elaboradas por el equipo
+
+└── README.md             
+     Introducción y propósito del repositorio
 
 Detalle de carpetas
 
