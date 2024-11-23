@@ -1,4 +1,4 @@
-Documentación
+Documentación.
 
 En este directorio recopilamos notas, guías y procesos documentados por el equipo. Es un espacio para consolidar el conocimiento adquirido y compartirlo de manera organizada.
 
