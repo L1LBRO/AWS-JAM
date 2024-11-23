@@ -1,6 +1,7 @@
 AWS-JAM
 
 Este es el repositorio oficial donde los participantes de Zubiri Manteo comparten y organizan las herramientas, scripts y recursos necesarios para prepararse y participar en el AWS-JAM. Aunque el repositorio es público, su propósito principal es servir como un espacio de colaboración para los integrantes del equipo.
+
 🛠️ Propósito del repositorio
 
 El objetivo de este repositorio es:
