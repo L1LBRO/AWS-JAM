@@ -1,22 +1,22 @@
-En este script se explicará como crear un backup de una instancia web en EC2 hacia un bucket S3
+#En este script se explicará como crear un backup de una instancia web en EC2 hacia un bucket S3
 
-Para empezar a crear se deben añadir las credenciales de la API de AWS a la instancia desde la que se van a hacer las backups
+#Para empezar a crear se deben añadir las credenciales de la API de AWS a la instancia desde la que se van a hacer las backups
 
-Las credenciales se encuentran en el AwsDetails. Para acceder hay que presionar en "Show" en AWS ClI
+#Las credenciales se encuentran en el AwsDetails. Para acceder hay que presionar en "Show" en AWS ClI
 
-Estas credenciales se deben guardar en ~/.aws/credentials tal cual a como indica Amazon básicamente hay que hacer un copia-pega de esas credenciales en el fichero que se crea
+#Estas credenciales se deben guardar en ~/.aws/credentials tal cual a como indica Amazon básicamente hay que hacer un copia-pega de esas credenciales en el fichero que se crea
 
-Se debe crear el fichero con sudo obligatorio ya que se esta creando un ficero oculto al cuál solo el script podrá acceder.
+#Se debe crear el fichero con sudo obligatorio ya que se esta creando un ficero oculto al cuál solo el script podrá acceder.
 
-Antes de ir con el script se debe instalar en la instancia "AWS-CLI" para que el script pueda acceder a ese fichero oculto de credenciales.
+#Antes de ir con el script se debe instalar en la instancia "AWS-CLI" para que el script pueda acceder a ese fichero oculto de credenciales.
 
-El comando de instalación es el siguiente: Sudo apt install aws-cli.
+#El comando de instalación es el siguiente: Sudo apt install aws-cli.
 
-Una vez se ha instalado el cli se debe configurar la región, el formato de salida y las claves.
+#Una vez se ha instalado el cli se debe configurar la región, el formato de salida y las claves.
 
-El comando que se debe ejecutar es: aws configure. Este comando pedirá aws_access_key_id, aws_secret_access_key, region (La región del laboratorio, que se encuentra al final del todo en AWS-Details.) y el formato de salida (Json, Text, XML etc..)
+#El comando que se debe ejecutar es: aws configure. Este comando pedirá aws_access_key_id, aws_secret_access_key, region (La región del laboratorio, que se encuentra al final del todo en AWS-Details.) y el formato de salida (Json, Text, XML etc..)
 
-Una vez configurado todo eso se procede con el script el cuál es el siguiente:
+#Una vez configurado todo eso se procede con el script el cuál es el siguiente:
 
             #!/bin/bash
 
@@ -53,26 +53,26 @@ Una vez configurado todo eso se procede con el script el cuál es el siguiente:
                 fi
 
 
-Una vez se ha creado el fichero del script se debe ejecutar el comando: sudo chmod +x. Esto con el fin de que sea ejecutable.
+#Una vez se ha creado el fichero del script se debe ejecutar el comando: sudo chmod +x. Esto con el fin de que sea ejecutable.
 
-Una vez se ejecute el script deberán salir lo siguiente:
+#Una vez se ejecute el script deberán salir lo siguiente:
 
-        ./htmlBackup.sh 
-        adding: var/www/html/ (stored 0%)
-        adding: var/www/html/index.html (deflated 71%)
-        Se creó el backup : /tmp/backup_2024_11_23-16:54.zip
-        upload: ../../tmp/backup_2024_11_23-16:54.zip to s3://bucketweb/backup_2024_11_23-16:54.zip
-        Backup subido a bucketweb
+#        ./htmlBackup.sh 
+#        adding: var/www/html/ (stored 0%)
+#        adding: var/www/html/index.html (deflated 71%)
+#        Se creó el backup : /tmp/backup_2024_11_23-16:54.zip
+#        upload: ../../tmp/backup_2024_11_23-16:54.zip to s3://bucketweb/backup_2024_11_23-16:54.zip
+#        Backup subido a bucketweb
 
-Posibles errores que pueden surgir
+#Posibles errores que pueden surgir
 
-En caso de que salga este error: An error occurred (ExpiredToken) when calling the PutObject operation: The provided token has expired
+#En caso de que salga este error: An error occurred (ExpiredToken) when calling the PutObject operation: The provided token has expired
 
-Se deben ejecutar los siguientes comandos:
+#Se deben ejecutar los siguientes comandos:
   
-export AWS_ACCESS_KEY_ID="clave de acceso"
-export AWS_SECRET_ACCESS_KEY="clave secreta"
-export AWS_SESSION_TOKEN="token de sesión"
+#export AWS_ACCESS_KEY_ID="clave de acceso"
+#export AWS_SECRET_ACCESS_KEY="clave secreta"
+#export AWS_SESSION_TOKEN="token de sesión"
 
-Todo esto es lo que ya esta previamente añadido pero aveces el AWS-CLI se queda "medio tonto" y no ve lo que hay en el fichero por que esta buscando en su caché
-  por lo que ejecutando esos comandos se actualizará y se podrá ejecutar el script perfectamente.
+#Todo esto es lo que ya esta previamente añadido pero aveces el AWS-CLI se queda "medio tonto" y no ve lo que hay en el fichero por que esta buscando en su caché
+ # por lo que ejecutando esos comandos se actualizará y se podrá ejecutar el script perfectamente.
